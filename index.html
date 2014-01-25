@@ -1,1 +1,26 @@
-<h1>HACK RICE</h1>
+﻿<!DOCTYPE html>
+<hmtl lang="en"  ng-app="hr">
+
+<head>
+	<title>Better Schedule Planner</title>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+	<script src="js/choosing.js"></script>
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body style=" background-color:gray; padding:90px 50px 0px 50px; font-size:large">
+<div  ng-controller="information" ng-init="current='intro'">
+
+<div id="list1">
+   <ul>
+      <li><a href="#" ng-click="current='Calendar'">Calendar</a></li>
+      <li><a href="#" ng-click="current='Search'">Find Classes</li>
+   </ul>
+</div>
+
+<div ng-include="categories[current]"></div>
+
+</div>
+</body>
+</hmtl>
+	
