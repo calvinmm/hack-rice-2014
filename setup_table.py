@@ -6,14 +6,24 @@ def main():
     def create_table():
         conn = sqlite3.connect(db_name)
         c = conn.cursor()
-        c.execute('''create table courses (dept text, number integer, name text, dist integer)''')
+        c.execute('''create table courses (dept text, number integer, name text, dist text)''')
+        c.execute('''create table ratings (dept text, number integer,
+            semester text, teacher text, rating text,
+            workload text, time text, crn text)''')
         conn.commit()
         conn.close()
 
     def clean_table():
         conn = sqlite3.connect(db_name)
         c = conn.cursor()
-        c.execute("drop table courses")
+        try:
+            c.execute("drop table courses")
+        except:
+            pass
+        try:
+            c.execute("drop table ratings")
+        except:
+            pass
         conn.commit()
         conn.close()
 
@@ -36,7 +46,7 @@ def main():
             clean_table()
         else:
             clean_table()
-            create_table()
+        create_table()
 
     check_table()
 
@@ -44,7 +54,7 @@ def main():
     with open(course_data, "r") as f:
         for line in f:
             
-            tup = tuple(line.split("~"))
+            tup = tuple(line.replace('\n', '').split("~"))
             assert len(tup) == 4
 
             def insert_row(tup):

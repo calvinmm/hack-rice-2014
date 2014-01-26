@@ -25,9 +25,9 @@ def cats():
 @app.route('/courses')
 def courses():
     rows = query('select * from courses')
+    names = map(lambda y: y[0], rows.description)
 
-    # json json
-    return jsonify(courses=list(rows))
+    return jsonify(courses=map(lambda x: dict(zip(names, x)), list(rows)))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
