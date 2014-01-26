@@ -11,7 +11,7 @@ function determine_top(time) {
 
     // var bottom = 26;
     // return (bottom + times.indexOf(time) * bottom).toString() + "px";
-    return top[times.indexOf(time)].toString() + "px";
+    return top[times.indexOf(time)];
 }
 
 function determine_left(day) {
