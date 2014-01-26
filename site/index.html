@@ -131,17 +131,16 @@
                             <li class="list-group-item">COMP 310
                                 <span class="glyphicon glyphicon-remove pull-right"></span></li>
                         </ul>
-</br>
-		    <a href="http://registrar.rice.edu/students/reg_instructions/" target="_blank" class="registrationLink">Register For Classes</a>
+		    <!-- <a href="http://registrar.rice.edu/students/reg_instructions/" target="_blank" class="registrationLink">Register For Classes</a> -->
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="bottom">
-                    <div class="col-md-12">
+                <div class="bottom"  style="display: none;">
+                    <div class="col-md-12" id="course-info-bottom">
                         <h4>Calculus 1 - MATH 101</h4>
                         <h5>Rice University</h5>
-                        <p><strong>Instructor: </strong>Betul Orcan, <strong>CRN: </strong>55555, <strong>Meeting Times: </strong> MWF 10am-11am</p>
+                        <p><strong>Instructor: </strong><span id="prof-name">Betul Orcan</span>, <strong>CRN: </strong><span id="crn">55555</span>, <strong>Meeting Times: </strong> <span id="meeting-times">MWF 10am-11am</span></p>
                     </div>
                     <div class="col-md-12">
                         <div class="chart" id="pie_chart"></div>
@@ -167,7 +166,7 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script>
         google.load('visualization', '1.0', {'packages':['corechart']});
-        google.setOnLoadCallback(drawChart);
+        // google.setOnLoadCallback(drawChart);
     </script>
     <script>
         // does not work
@@ -180,7 +179,7 @@
         // });
 
     </script>
-    
+    <script src="js/populate.js"></script>
 
   </body>
 </html>

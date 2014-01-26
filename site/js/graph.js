@@ -1,14 +1,15 @@
-function drawChart() {
+function drawChart(arr) {
+  console.log(arr);
   // Create the data table.
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Letter Grade');
   data.addColumn('number', 'Number of Students');
   data.addRows([
-    ['A', 30],
-    ['B', 23],
-    ['C', 5], 
-    ['D', 4],
-    ['F', 2]
+    ['A', arr[0]],
+    ['B', arr[1]],
+    ['C', arr[2]], 
+    ['D', arr[3]],
+    ['F', arr[4]]
   ]);
 
   // Set chart options
@@ -27,13 +28,13 @@ function drawChart() {
   var chart = new google.visualization.PieChart(document.getElementById('pie_chart'));
   chart.draw(data, options);
 
-  draw_1();
-  draw_2();
+  // draw_1();
+  // draw_2();
 }
 
-function draw_1() {
+function draw_1(percentages) {
   var xLabel = ['Workload', 'Much Lighter', 'Somewhat Lighter', 'Average', 'Somewhat Heavier', 'Much Heavier'];
-  var percentages = [.6, .1, .1, 0, .2];
+  // var percentages = [.6, .1, .1, 0, .2];
 
   var data = google.visualization.arrayToDataTable([
     [xLabel[0], 'Percentage of Responses', { role: 'style'}],
@@ -55,9 +56,9 @@ function draw_1() {
   chart.draw(data, options);
 }
 
-function draw_2() {
+function draw_2(percentages) {
   var xLabel = ['Course Quality', 'Outstanding', 'Good', 'Average', 'Fair', 'Poor'];
-  var percentages = [.9, .1, .0, .0, .0];
+  // var percentages = [.9, .1, .0, .0, .0];
 
   var data = google.visualization.arrayToDataTable([
     [xLabel[0], 'Percentage of Responses', { role: 'style'}],
