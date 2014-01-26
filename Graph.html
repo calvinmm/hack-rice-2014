@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      var xAxis_workload = ['Workload', 'Much Lighter', 'Somewhat Lighter', 'Average', 'Somewhat Heavier', 'Much Heavier']
+      var xAxis_quality = ['Course Quality', 'Outstanding', 'Good', 'Average', 'Fair', 'Poor']
+      var xAxis_teacher = ['Averaged Teacher Rating', 'Outstanding', 'Good', 'Average', 'Fair', 'Poor']
+
+
+      function drawChart(xLabel, percentages, chart_id) {
+
+        // Create the data table.
+        var data = google.visualization.arrayToDataTable([
+	    [xLabel[0], 'Percentage of Responses', { role: 'style'}],
+	    [xLabel[1],  percentages[0], 'blue'],
+	    [xLabel[2],  percentages[1], 'turquoise'],
+	    [xLabel[3],  percentages[2], 'yellow'],
+	    [xLabel[4],  percentages[3], 'orange'],
+	    [xLabel[5],  percentages[4], 'red']
+	  ]);
+
+        // Set chart options
+        var options = {title:xLabel[0].concat(' compared to all Rice classes'),
+        				legend:'none',
+        				vAxis:{title:'Percentage of Responses',
+        						format:'###%'},
+                       width:400,
+                       height:300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.ColumnChart(document.getElementById(chart_id));
+        chart.draw(data, options);
+    	}
+
+
+
+    </script>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="workload_chart">
+    	<script>drawChart(xAxis_workload, [.7, .2, .1, .075, .4-.075], "workload_chart"); </script>
+    </div>
+    <div id="quality_chart">
+    	<script>drawChart(xAxis_quality, [.1, .2, .3, .4, .5], "quality_chart")</script>
+    </div>
+  </body>
+</html>
