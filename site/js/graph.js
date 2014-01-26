@@ -13,7 +13,7 @@ function drawChart(arr) {
   ]);
 
   // Set chart options
-  var options = {'title':'Grade Distribution',
+  var options = {'title':'Expected Grade',
                  'width':400,
                  'height':400,
                  'slices': {
