@@ -27,7 +27,7 @@
       var x=document.forms["sign_in"]["email"].value;
       var len = x.length
       var atricepos=x.indexOf("@rice.edu");
-      if (len < 9 || atricepos<1 || atricepos+!=x.length)
+      if (len < 9 || atricepos<1 || atricepos+9!=x.length)
         {
         alert("Not a valid e-mail address");
         return false;
@@ -41,14 +41,14 @@
 
     <div class="container">
 
-      <form name="sign_in" class="form-signin" role="form" onsubmit="return validateForm()" action="index.html">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input name="email" type="text" class="form-control" placeholder="Email address" required autofocus>
+      <form name="sign_in" class="form-signin" onsubmit="return validateForm()" action="index.html">
+        <h2 class="form-signin-heading">Please sign-in</h2>
+        <input name="email" type="email" ng-model="text" class="form-control" placeholder="Rice Email Address" required autofocus>
         <input type="password" class="form-control" placeholder="Password" required>
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-          <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="validateForm()">Sign in</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
     </div> <!-- /container -->

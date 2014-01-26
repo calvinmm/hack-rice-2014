@@ -18,11 +18,6 @@
     display: none;
 }
 
-#omit-border {
-    border: 0px;
-    padding-bottom: 0px;
-}
-
 .row {
     padding: 15px;
 }
@@ -31,4 +26,113 @@
     width: 300px;
     height: 400px;
     display: inline-block;
+}
+
+table {
+    font-size: 10px;
+}
+
+thead {
+    font-weight: 800;
+    text-align: center;
+}
+
+td.header {
+    width: 30px;
+    font-size: 12px;
+}
+
+td.tiny {
+    width: 5px;
+}
+
+td.time {
+    width: 5px;
+}
+
+table.table-blah {
+    background-color: white;
+    border-width: 0px;
+}
+
+td.nope {
+    border-style: none;
+    border-width: 0px 0px 0px 0px;
+    text-align: center;
+    border-color: #ccc;
+}
+
+td {
+    height: 20px;
+    width: 20px;
+    border-right-style: solid;
+    border-color: #ccc;
+    border-width: 0px 1px 0px 0px;
+}
+
+td.left {
+    border-right-style: solid;
+}
+
+td.right {
+    border-right-style: none;
+}
+
+#add-class {
+    padding: 15px;
+    width: 100px;
+}
+
+#class-list {
+    padding: 0px 15px 15px;
+    width: 250px;
+}
+
+.current {
+    background-color: #dff0d8;
+}
+
+.bottom {
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    padding: 5px;
+    border-color: #eee;
+    border-style: solid;
+    border-width: 0px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; /* future proofing */
+    -khtml-border-radius: 6px; /* for old Konqueror browsers */
+}
+
+.class-element {
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; /* future proofing */
+    -khtml-border-radius: 6px; /* for old Konqueror browsers */
+    width: 116px;
+    line-height: 25px;
+    position: absolute;
+    text-align: center;
+    font-weight: 900;
+    color: white;
+    font-size: 12px;
+    height: 25px;
+}
+
+#math-355 {
+    background-color: #9C25C2;
+}
+
+#math-101 {
+    background-color: #2A9156;
+}
+
+#comp-310 {
+    background-color: #D54C33;
+}
+
+.input-group {
+    padding-top: 10px;
 }

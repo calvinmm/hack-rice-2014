@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="hr">
+<html lang="en">
   <head>
     <title>Hack Rice 2014</title>
     <link rel="shortcut icon" href="logo.png" />
@@ -8,8 +8,6 @@
     <!-- <link href="css/jumbotron-narrow.css" rel="stylesheet"> -->
     <link href="css/sticky-footer-navbar.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
-    <script src="js/choosing.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,64 +16,136 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript">
-       function toggle_visibility(id) {
-           var e = document.getElementById(id);
-           if(e.style.display == 'block')
-              e.style.display = 'none';
-           else
-              e.style.display = 'block';
-       }
-    </script>
-
   </head>
   <body>
-<div ng-controller="choice" ng-init="load()">
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Add Coures to Schedule</h4>
+          </div>
+          <div class="modal-body">
+            <div class="input-group">
+                <span class="input-group-addon">Department</span>
+                <input id="add-department" type="text" class="form-control" placeholder="MATH">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Course Number</span>
+                <input id="add-course-number" type="text" class="form-control" placeholder="101">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Distribution</span>
+                <input id="add-distribution" type="text" class="form-control" placeholder="1">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <div id="wrap">
         <div class="container container-narrow">
             <div class="page-header">
-                <h1>Generic Application</h1>
+                <img src="logo_text.png" />
+                <!-- <h1>SchedulePlanner++</h1> -->
             </div>
             <div class="row">
-                <div class="col-md-8">
-                    <img src="http://placehold.it/700x400">
+                <div class="col-md-1" style="padding-right: 0px;">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr><td class="header nope">&nbsp;</td></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="nope"><td class="nope">8am</td></tr>
+                            <tr class="nope"><td class="nope">9am</td></tr>
+                            <tr class="nope"><td class="nope">10am</td></tr>
+                            <tr class="nope"><td class="nope">11am</td></tr>
+                            <tr class="nope"><td class="nope">12pm</td></tr>
+                            <tr class="nope"><td class="nope">1pm</td></tr>
+                            <tr class="nope"><td class="nope">2pm</td></tr>
+                            <tr class="nope"><td class="nope">3pm</td></tr>
+                            <tr class="nope"><td class="nope">4pm</td></tr>
+                            <tr class="nope"><td class="nope">5pm</td></tr>
+                            <tr class="nope"><td class="nope">6pm</td></tr>
+                            <tr class="nope"><td class="nope">7pm</td></tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="col-md-4">
-                    <button type="button" class="btn btn-success" onclick="toggle_visibility('add_course')">Add Course</button>
+                <div class="col-md-7">
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <td class="header">M</td>
+                                <td class="header">T</td>
+                                <td class="header">W</td>
+                                <td class="header">TH</td>
+                                <td class="header right">F</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td>
+                                <div class="class-element" id="math-101" style="top: 78px; left: 21px;">MATH 101</div>
+                                <div class="class-element" id="math-101" style="top: 78px; left: 276px;">MATH 101</div>
+                                <div class="class-element" id="math-101" style="top: 78px; left: 528px;">MATH 101</div>
 
+                                <div class="class-element" id="math-355" style="top: 52px; left: 21px;">MATH 355</div>
+                                <div class="class-element" id="math-355" style="top: 52px; left: 276px;">MATH 355</div>
+                                <div class="class-element" id="math-355" style="top: 52px; left: 528px;">MATH 355</div>
 
-                    <button type="button" class="btn btn-danger" onclick="toggle_visibility('remove_course')">Remove Course</button>
+                                <div class="class-element" id="comp-310" style="top: 128px; left: 148px; height: 37px; line-height: 36px;">COMP 310</div>
+                                <div class="class-element" id="comp-310" style="top: 128px; left: 401px; height: 37px; line-height: 36px;">COMP 310</div>
+                            </tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div id="add_course" style="display: none; background-color: #FFFFFF">
-                        <form name="input" action="html_form_action.asp" method="get">
-
-
-                    <form action="">
-                    Department:<select ng-model="dept" ng-options="values for values in division" name="departments">
-                    </select>
-                        
-                    <form action="">
-                    Distribution: <select ng-model="dist" ng-options="values for values in distribution" name="distribution">
-                    </select>
-                        
-                    Number:<input type="number" name="number" ng-model="value" min=0 max=999>
-
-                    <input type="submit" value="Submit">
-
-                    </br>
-		    <a href="http://registrar.rice.edu/students/reg_instructions/" target="_blank" class="registrationLink">Register For Classes</a>
+                <div class="col-md-4 pull-right">
+                    <div id="add-class">
+                        <!-- <button id="add-class-button" type="button" class="btn btn-primary">Add Class</button> -->
+                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal">
+                          Add Courses
+                        </button>
+                    </div>
+                    <div id="class-list">
+                        <ul class="list-group" id="file-list">
+                            <li class="list-group-item">MATH 101
+                                <span class="glyphicon glyphicon-remove pull-right"></span></li>
+                            <li class="list-group-item">MATH 355
+                                <span class="glyphicon glyphicon-remove pull-right"></span></li>
+                            <li class="list-group-item">COMP 310
+                                <span class="glyphicon glyphicon-remove pull-right"></span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="remove_course" style="display: none">
-                    <h1>Remove Course Form Goes Here</h1>
-                </div>
-                <img src="http://placehold.it/300x300">
             </div>
             <div class="row">
-                <div class="col-md-12">
-                    <h2> Course Evaluations <small> Averaged From Previous Semesters</small></h2>
-                    <div class="chart" id="pie_chart"></div>
-                    <div class="chart" id="bar_chart_1"></div>
-                    <div class="chart" id="bar_chart_2"></div>
+                <div class="bottom">
+                    <div class="col-md-12">
+                        <h4>Calculus 1 - MATH 101</h4>
+                        <h5>Rice University</h5>
+                        <p><strong>Instructor: </strong>Betul Orcan, <strong>CRN: </strong>55555, <strong>Meeting Times: </strong> MWF 10am-11am</p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="chart" id="pie_chart"></div>
+                        <div class="chart" id="bar_chart_1"></div>
+                        <div class="chart" id="bar_chart_2"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,12 +161,24 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/graph.js"></script>
+    <!-- <script src="js/typeahead.js"></script> -->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script>
         google.load('visualization', '1.0', {'packages':['corechart']});
         google.setOnLoadCallback(drawChart);
     </script>
+    <script>
+        // does not work
+        // $('#add-department').typeahead({                                
+        //   name: 'department',
+        //   local: [
+        //     "MATH",
+        //     "COMP"
+        //   ]
+        // });
+
+    </script>
     
-</div>
+
   </body>
 </html>
