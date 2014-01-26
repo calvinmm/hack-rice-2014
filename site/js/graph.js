@@ -4,7 +4,7 @@ function drawChart() {
   data.addColumn('string', 'Letter Grade');
   data.addColumn('number', 'Number of Students');
   data.addRows([
-    ['A', 10],
+    ['A', 30],
     ['B', 23],
     ['C', 5], 
     ['D', 4],
@@ -44,7 +44,7 @@ function draw_1() {
     [xLabel[5],  percentages[4], '#FF4848']
   ]);
 
-  var options = {title:xLabel[0].concat(' compared to all Rice classes'),
+  var options = {title:xLabel[0].concat(' compared to all Rice courses'),
                   legend:'none',
                   vAxis:{title:'Percentage of Responses',
                           format:'###%'},
@@ -68,7 +68,7 @@ function draw_2() {
     [xLabel[5],  percentages[4], '#FF4848']
   ]);
 
-  var options = {title:xLabel[0].concat(' compared to all Rice classes'),
+  var options = {title:xLabel[0].concat(' compared to all Rice courses'),
                   legend:'none',
                   vAxis:{title:'Percentage of Responses',
                           format:'###%'},
