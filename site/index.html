@@ -51,34 +51,15 @@
 
 
                     <form action="">
-                    Department:<select ng-model="dept" ng-options="c.dept in c in courses | unique:'dept'" name="departments">
+                    Department:<select ng-model="dept" ng-options="values for values in division" name="departments">
                     </select>
-
+                        
                     <form action="">
-                    Course: <select ng-model="number" ng-options="c.number in c in courses | unique:'number'" name="courses">
-                    </select>
-
-                    <form action="">
-                    Distribution: <select ng-model="dist" ng-options="c.dist in c in courses | unique:'dist'" name="distribution">
+                    Distribution: <select ng-model="dist" ng-options="values for values in distribution" name="distribution">
                     </select>
 
                     <input type="submit" value="Submit">
 
-
-
-                        <form action="">
-                        Department: <select ng-model="dept" ng-options="c.dept for c in courses | unique:'dept'" name="departments">
-                        </select>
-                    </br>
-
-                        <form action="">
-                        Course: <select ng-model="number" ng-options="c.number for c in courses | unique:'number'" name="courses">
-                        </select>
-                    </br>
-
-                        <form action="">
-                        Distribution: <select ng-model="dist" ng-options="c.dist for c in courses | unique:'dist'" name="distribution">
-                        </select>
                     </br>
 		    <a href="http://registrar.rice.edu/students/reg_instructions/" target="_blank" class="registrationLink">Register For Classes</a>
                 </div>
