@@ -9,6 +9,23 @@
     $("#footer").fadeIn();
 })();
 
+function add_to_calendar(arr) {
+    var url = "http://ec2-54-201-138-192.us-west-2.compute.amazonaws.com:8080/ratings/";
+    $.getJSON(url + arr[0] + "/" + arr[1] + "?callback=?", function(data) {
+        var obj = data.courses[0];
+        
+        var t = obj.time.split(",");
+
+        $(t).each(function (i, j) {
+            var z = j.split(" ");
+            var x = z[0];
+            var y = z[1].split("-")[0];
+
+            add_class_calendar(x, y, arr.join(" "), arr.map(function(x){return x.toLowerCase()}).join("-"));
+        });
+    });
+}
+
 function fix_bottom_junk(arr) {
     var url = "http://ec2-54-201-138-192.us-west-2.compute.amazonaws.com:8080/ratings/";
     $.getJSON(url + arr[0] + "/" + arr[1] + "?callback=?", function(data) {
@@ -81,6 +98,8 @@ function add_class_list (name) {
     }).text(name).append($("<span>").attr({
         class: "glyphicon glyphicon-remove pull-right"
     }));
+
+    add_to_calendar(name.split(" "));
 
     $("#file-list").append(temp);
     ensure_listen();
