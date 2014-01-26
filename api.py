@@ -50,6 +50,7 @@ def courses():
 @jsonp
 def ratings(dept, number):
     # super bad form don't look
+    dept = dept.upper()
     rows = query("select * from ratings where dept = '%s' and number = '%s'" % (dept, number))
     names = map(lambda y: y[0], rows.description)
 
