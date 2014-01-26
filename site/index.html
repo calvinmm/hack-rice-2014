@@ -51,21 +51,18 @@
                         <form action="">
                         Department:<select ng-model="dept" ng-options="c.dept in for c in courses | unique:'dept'" name="departments">
                         </select>
+                    </br>
 
                         <form action="">
                         Course: <select ng-model="number" ng-options="c.number in for c in courses | unique:'number'" name="courses">
                         </select>
+                    </br>
 
                         <form action="">
                         Distribution: <select ng-model="dist" ng-options="c.dist in for c in courses | unique:'dist'" name="distribution">
                         </select>
-
-                    <img src="http://placehold.it/300x300">
+                    </br>
 		    <a href="http://registrar.rice.edu/students/reg_instructions/" target="_blank" class="registrationLink">Register For Classes</a>
-                </div>
-                <div id="add_course">
-                    <h1>Add Course Form Goes Here</h1>
-                        <input type="submit" value="Submit">
                 </div>
                 <div id="remove_course" style="display: none">
                     <h1>Remove Course Form Goes Here</h1>
