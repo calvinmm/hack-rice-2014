@@ -45,7 +45,7 @@
           </div>
           <p>
             <ul class="list-group" id="possible-class">
-                <li class="list-group-item" ng-repeat="class in courses | filter:want.dist | filter:want.dept | filter:want.number" ng-bind="class.name" dept="{{class.dept}}" number="{{class.number}}" style="width: 500px; margin: auto;" onclick="possible()" onload="attempt_fix()">
+                <li class="list-group-item" ng-repeat="class in courses | filter:want.dist | filter:want.dept | filter:want.number" ng-bind-template="{{class.dept}} {{class.number}} | {{class.name}}" dept="{{class.dept}}" number="{{class.number}}" style="width: 500px; margin: auto;" onclick="possible()" onload="attempt_fix()">
                 </li>
             </ul>
           </p>
@@ -86,6 +86,18 @@
                 </div>
                 <div class="col-md-7">
                     <table class="table table-condensed table-striped">
+                        <span id="add-here">
+                            <div class="class-element" id="math-101" style="top: 78px; left: 21px;">MATH 101</div>
+                            <div class="class-element" id="math-101" style="top: 78px; left: 276px;">MATH 101</div>
+                            <div class="class-element" id="math-101" style="top: 78px; left: 528px;">MATH 101</div>
+
+                            <!-- <div class="class-element" id="math-355" style="top: 52px; left: 21px;">MATH 355</div>
+                            <div class="class-element" id="math-355" style="top: 52px; left: 276px;">MATH 355</div>
+                            <div class="class-element" id="math-355" style="top: 52px; left: 528px;">MATH 355</div> -->
+
+                            <!-- <div class="class-element" id="comp-310" style="top: 128px; left: 148px; height: 37px; line-height: 36px;">MATH 102</div>
+                            <div class="class-element" id="comp-310" style="top: 128px; left: 401px; height: 37px; line-height: 36px;">MATH 102</div> -->
+                        </span>
                         <thead>
                             <tr>
                                 <td class="header">M</td>
@@ -97,18 +109,7 @@
                         </thead>
                         <tbody>
                             <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td>
-                                <div class="class-element" id="math-101" style="top: 78px; left: 21px;">MATH 101</div>
-                                <div class="class-element" id="math-101" style="top: 78px; left: 276px;">MATH 101</div>
-                                <div class="class-element" id="math-101" style="top: 78px; left: 528px;">MATH 101</div>
-
-                                <div class="class-element" id="math-101" style="top: 103px; left: 528px;">MATH 101</div>
-
-                                <div class="class-element" id="math-355" style="top: 52px; left: 21px;">MATH 355</div>
-                                <div class="class-element" id="math-355" style="top: 52px; left: 276px;">MATH 355</div>
-                                <div class="class-element" id="math-355" style="top: 52px; left: 528px;">MATH 355</div>
-
-                                <div class="class-element" id="comp-310" style="top: 128px; left: 148px; height: 37px; line-height: 36px;">MATH 102</div>
-                                <div class="class-element" id="comp-310" style="top: 128px; left: 401px; height: 37px; line-height: 36px;">MATH 102</div>
+                                
                             </tr>
                             <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
                             <tr><td>&nbsp;</td><td></td><td></td><td></td><td class="right"></td></tr>
