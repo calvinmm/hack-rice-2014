@@ -2,7 +2,7 @@ CC=python
 API=api.py
 
 default:
-	sudo $(CC) -m SimpleHTTPServer 80
+	cd site && sudo $(CC) -m SimpleHTTPServer 80
 
 api:
 	$(CC) $(API)
