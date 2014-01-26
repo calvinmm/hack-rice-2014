@@ -7,5 +7,9 @@ default:
 api:
 	$(CC) $(API)
 
+test:
+	cd site;
+	sudo python -m SimpleHTTPServer 8000
+
 pip:
 	pip install -r requirements.txt

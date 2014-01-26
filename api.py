@@ -4,7 +4,6 @@ from functools import wraps
 
 app = Flask(__name__)
 
-# jsonp magic
 def jsonp(func):
     """Wraps JSONified output for JSONP requests."""
     @wraps(func)
