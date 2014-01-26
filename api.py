@@ -46,5 +46,14 @@ def courses():
 
     return jsonify(courses=map(lambda x: dict(zip(names, x)), list(rows)))
 
+@app.route('/ratings/<dept>/<number>')
+@jsonp
+def ratings(dept, number):
+    # super bad form don't look
+    rows = query("select * from ratings where dept = '%s' and number = '%s'" % (dept, number))
+    names = map(lambda y: y[0], rows.description)
+
+    return jsonify(courses=map(lambda x: dict(zip(names, x)), list(rows)))    
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

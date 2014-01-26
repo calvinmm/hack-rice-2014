@@ -8,8 +8,8 @@ def main():
         c = conn.cursor()
         c.execute('''create table courses (dept text, number integer, name text, dist text)''')
         c.execute('''create table ratings (dept text, number integer,
-            semester text, teacher text, rating text,
-            workload text, time text, crn text)''')
+            semester text, teacher text, grades text, workload text,
+            rating text, time text, crn text)''')
         conn.commit()
         conn.close()
 
@@ -61,6 +61,22 @@ def main():
                 conn = sqlite3.connect(db_name)
                 c = conn.cursor()
                 c.execute("insert into courses values ('%s', '%s', '%s', '%s')" % tup)
+                conn.commit()
+                conn.close()
+
+            insert_row(tup)
+
+    ratings_data = "ratings_data.txt"
+    with open(ratings_data, "r") as f:
+        for line in f:
+
+            tup = tuple(line.replace('\n', '').split("~"))
+            assert len(tup) == 9
+
+            def insert_row(tup):
+                conn = sqlite3.connect(db_name)
+                c = conn.cursor()
+                c.execute("insert into ratings values ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')" % tup)
                 conn.commit()
                 conn.close()
 
