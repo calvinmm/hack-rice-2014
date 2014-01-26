@@ -43,7 +43,17 @@
                 <div class="col-md-4">
                     <button type="button" class="btn btn-success" onclick="toggle_visibility('add_course')">Add Course</button>
 
-                    <button type="button" class="btn btn-danger">Remove Course</button>
+                    <button type="button" class="btn btn-danger" onclick="toggle_visibility('remove_course')">Remove Course</button>
+                    
+
+
+                
+
+                    <button type="button" class="btn btn-danger" onclick="toggle_visibility('remove_course')">Remove Course</button>
+
+                    <img src="http://placehold.it/300x300">
+                </div>
+                <div id="add_course" style="display: none">
                     <form name="input" action="html_form_action.asp" method="get">
 
                     <form action="">
@@ -59,19 +69,8 @@
                     </select>
 
                     <input type="submit" value="Submit">
-
-
-                
-
-                    <button type="button" class="btn btn-danger" onclick="toggle_visibility('remove_course')">Remove Course</button>
- changed select boxes
-
-                    <img src="http://placehold.it/300x300">
                 </div>
-                <div id="add_course">
-                    <h1>Add Course Form Goes Here</h1>
-                </div>
-                <div id="remove_course">
+                <div id="remove_course" style="display: none">
                     <h1>Remove Course Form Goes Here</h1>
                 </div>
             </div>
