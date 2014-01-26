@@ -43,9 +43,14 @@
                 <input ng-model="want.dist" id="add-distribution" type="text" class="form-control">
             </div>
           </div>
+          <p>
+            <ul class="list-group" id="possible-class">
+                <li class="list-group-item" ng-repeat="class in courses | filter:want.dist | filter:want.dept | filter:want.number" ng-bind="class.name" dept="{{class.dept}}" number="{{class.number}}" style="width: 500px; margin: auto;" onclick="possible()" onload="attempt_fix()">
+                </li>
+            </ul>
+          </p>
           <div class="modal-footer">
             <button  type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Add Course</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -96,6 +101,8 @@
                                 <div class="class-element" id="math-101" style="top: 78px; left: 276px;">MATH 101</div>
                                 <div class="class-element" id="math-101" style="top: 78px; left: 528px;">MATH 101</div>
 
+                                <div class="class-element" id="math-101" style="top: 103px; left: 528px;">MATH 101</div>
+
                                 <div class="class-element" id="math-355" style="top: 52px; left: 21px;">MATH 355</div>
                                 <div class="class-element" id="math-355" style="top: 52px; left: 276px;">MATH 355</div>
                                 <div class="class-element" id="math-355" style="top: 52px; left: 528px;">MATH 355</div>
@@ -128,12 +135,7 @@
                         <ul class="list-group" id="file-list">
                             <li class="list-group-item" id="current">MATH 101
                                 <span class="glyphicon glyphicon-remove pull-right"></span></li>
-                            <li class="list-group-item">MATH 355
-                                <span class="glyphicon glyphicon-remove pull-right"></span></li>
-                            <li class="list-group-item">MATH 102
-                                <span class="glyphicon glyphicon-remove pull-right"></span></li>
                         </ul>
-		    <!-- <a href="http://registrar.rice.edu/students/reg_instructions/" target="_blank" class="registrationLink">Register For Classes</a> -->
                     </div>
                 </div>
             </div>
@@ -154,10 +156,6 @@
         </div>
     </div>
     
-    <div ng-repeat="class in courses | filter:want.dist | filter:want.dept | filter:want.number">
-    <p ng-bind="class.name"></p>
-    </div>
-    
     <div id="footer">
         <div class="container">
             <p class="text-muted credit">Hack Rice 2014 | Built by Alex, Calvin, Jesse, Lauren, and Tres</p>
@@ -168,6 +166,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/graph.js"></script>
+
     <!-- <script src="js/typeahead.js"></script> -->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script>
@@ -176,6 +175,7 @@
     </script>
     <script> src="js/calendar_position.js"</script>
     <script src="js/populate.js"></script>
+    <script src="js/date_1.js"></script>
     
 </div>
   </body>

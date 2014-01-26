@@ -49,13 +49,39 @@ function fix_bottom_junk(arr) {
     });
 }
 
-$(".list-group-item").click(function() {
+function ensure_listen() {
+    $("#file-list .list-group-item").click(function() {
 
-    $(".list-group-item").removeAttr("id");
-    $(this).attr("id", "current");
+        $(".list-group-item").removeAttr("id");
+        $(this).attr("id", "current");
 
-    var course_info = $(this).text().trim();
-    var arr = course_info.split(" ");
+        var course_info = $(this).text().trim();
+        var arr = course_info.split(" ");
 
-    fix_bottom_junk(arr);
-})
+        fix_bottom_junk(arr);
+    });
+}
+
+ensure_listen();
+
+function possible () {
+    $("#possible-class .list-group-item").each(function (i,j) {
+        if ($(j).css("background-color") == "rgb(240, 248, 255)") {
+            $(j).attr("id", "selected");
+
+            add_class_list($(j).attr("dept") + " " + $(j).attr("number"));
+        }
+    });
+}
+
+function add_class_list (name) {
+
+    var temp = $("<li>").attr({
+        class: "list-group-item"
+    }).text(name).append($("<span>").attr({
+        class: "glyphicon glyphicon-remove pull-right"
+    }));
+
+    $("#file-list").append(temp);
+    ensure_listen();
+}
