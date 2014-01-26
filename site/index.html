@@ -30,7 +30,7 @@
 
   </head>
   <body>
-
+<div ng-controller="choice" ng-init="load()">
     <div id="wrap">
         <div class="container container-narrow">
             <div class="page-header">
@@ -47,29 +47,24 @@
                     <form name="input" action="html_form_action.asp" method="get">
 
                     <form action="">
-                    Department:<select name="departments">
-                    <option>MATH</option>
-                    <option>PHYS</option>
-                    <option>COMP</option>
+                    Department:<select ng-model="dept" ng-options="c.dept in for c in courses" name="departments">
                     </select>
 
                     <form action="">
-                    Course: <select name="courses">
-                    <option>course</option>
-                    <option>course</option>
-                    <option>course</option>
+                    Course: <select ng-model="number" ng-options="c.number in for c in courses" name="courses">
                     </select>
 
                     <form action="">
-                    Distribution: <select name="distribution">
-                    <option>D1</option>
-                    <option>D2</option>
-                    <option>D3</option>
+                    Distribution: <select ng-model="dist" ng-options="c.dist in for c in courses" name="distribution">
                     </select>
 
                     <input type="submit" value="Submit">
 
+<<<<<<< HEAD
                 
+=======
+                    <button type="button" class="btn btn-danger" onclick="toggle_visibility('remove_course')">Remove Course</button>
+>>>>>>> changed select boxes
 
                     <img src="http://placehold.it/300x300">
                 </div>
@@ -107,6 +102,6 @@
         google.setOnLoadCallback(drawChart);
     </script>
     
-
+</div>
   </body>
 </html>
