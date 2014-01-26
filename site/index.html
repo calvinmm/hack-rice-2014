@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="hr">
   <head>
     <title>Hack Rice 2014</title>
     <link rel="shortcut icon" href="logo.png" />
@@ -8,6 +8,8 @@
     <!-- <link href="css/jumbotron-narrow.css" rel="stylesheet"> -->
     <link href="css/sticky-footer-navbar.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+    <script src="js/choosing.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +30,7 @@
 
   </head>
   <body>
-
+<div ng-controller="choice" ng-init="load()">
     <div id="wrap">
         <div class="container container-narrow">
             <div class="page-header">
@@ -40,12 +42,38 @@
                 </div>
                 <div class="col-md-4">
                     <button type="button" class="btn btn-success" onclick="toggle_visibility('add_course')">Add Course</button>
+
                     <button type="button" class="btn btn-danger">Remove Course</button>
+                    <form name="input" action="html_form_action.asp" method="get">
+
+                    <form action="">
+                    Department:<select ng-model="dept" ng-options="c.dept in for c in courses" name="departments">
+                    </select>
+
+                    <form action="">
+                    Course: <select ng-model="number" ng-options="c.number in for c in courses" name="courses">
+                    </select>
+
+                    <form action="">
+                    Distribution: <select ng-model="dist" ng-options="c.dist in for c in courses" name="distribution">
+                    </select>
+
+                    <input type="submit" value="Submit">
+
+<<<<<<< HEAD
+                
+=======
+                    <button type="button" class="btn btn-danger" onclick="toggle_visibility('remove_course')">Remove Course</button>
+>>>>>>> changed select boxes
+
                     <img src="http://placehold.it/300x300">
 		    <a href="http://registrar.rice.edu/students/reg_instructions/" target="_blank" class="registrationLink">Register For Classes</a>
                 </div>
                 <div id="add_course">
-                    <p>This is hidden! You can't find me!</p>
+                    <h1>Add Course Form Goes Here</h1>
+                </div>
+                <div id="remove_course">
+                    <h1>Remove Course Form Goes Here</h1>
                 </div>
             </div>
             <div class="row">
@@ -75,6 +103,6 @@
         google.setOnLoadCallback(drawChart);
     </script>
     
-
+</div>
   </body>
 </html>
