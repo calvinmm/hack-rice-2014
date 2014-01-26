@@ -95,9 +95,11 @@ function add_class_list (name) {
 
     var temp = $("<li>").attr({
         class: "list-group-item"
-    }).text(name).append($("<span>").attr({
-        class: "glyphicon glyphicon-remove pull-right"
-    }));
+    }).text(name);
+
+    // .append($("<span>").attr({
+    //     class: "glyphicon glyphicon-remove pull-right"
+    // }));
 
     add_to_calendar(name.split(" "));
 
