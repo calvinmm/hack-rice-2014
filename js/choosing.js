@@ -7,6 +7,6 @@ angular.module("hr",[])
  };
  $scope.courses = {};
  $scope.load = function(){
-     $scope.courses = $http.jsonp("courses?callback=JSON_CALLBACK");
+     $scope.courses = $http.jsonp("http://ec2-54-201-138-192.us-west-2.compute.amazonaws.com:8080/courses?callback=JSON_CALLBACK");
  };
  });
