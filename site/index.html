@@ -44,31 +44,25 @@
                     <button type="button" class="btn btn-success" onclick="toggle_visibility('add_course')">Add Course</button>
 
                     <button type="button" class="btn btn-danger" onclick="toggle_visibility('remove_course')">Remove Course</button>
-                    
-
-
-                
-
-                    <button type="button" class="btn btn-danger" onclick="toggle_visibility('remove_course')">Remove Course</button>
 
                     <img src="http://placehold.it/300x300">
                 </div>
                 <div id="add_course" style="display: none">
-                    <form name="input" action="html_form_action.asp" method="get">
+                        <form name="input" action="html_form_action.asp" method="get">
 
-                    <form action="">
-                    Department:<select ng-model="dept" ng-options="c.dept in for c in courses | unique:'dept'" name="departments">
-                    </select>
+                        <form action="">
+                        Department:<select ng-model="dept" ng-options="c.dept in for c in courses | unique:'dept'" name="departments">
+                        </select>
 
-                    <form action="">
-                    Course: <select ng-model="number" ng-options="c.number in for c in courses | unique:'number'" name="courses">
-                    </select>
+                        <form action="">
+                        Course: <select ng-model="number" ng-options="c.number in for c in courses | unique:'number'" name="courses">
+                        </select>
 
-                    <form action="">
-                    Distribution: <select ng-model="dist" ng-options="c.dist in for c in courses | unique:'dist'" name="distribution">
-                    </select>
+                        <form action="">
+                        Distribution: <select ng-model="dist" ng-options="c.dist in for c in courses | unique:'dist'" name="distribution">
+                        </select>
 
-                    <input type="submit" value="Submit">
+                        <input type="submit" value="Submit">
                 </div>
                 <div id="remove_course" style="display: none">
                     <h1>Remove Course Form Goes Here</h1>
