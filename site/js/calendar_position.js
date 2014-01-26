@@ -16,7 +16,7 @@ function calendar_positioning(arr) {
         console.log(obj);
         var cal = $("#calendar-table");
 
-        $(cal).find("#math-355").css({'width':'125px'});
+        $(cal).find("#math-355").css({'width':'120px'});
 
 
     });
