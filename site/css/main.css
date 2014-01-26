@@ -141,3 +141,7 @@ td.right {
 .list-group :hover {
     background-color: #f0f8ff;
 }
+
+#footer {
+    display: none;
+}

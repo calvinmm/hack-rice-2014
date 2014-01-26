@@ -6,6 +6,7 @@
     var arr = course_info.split(" ");
 
     fix_bottom_junk(arr);
+    $("#footer").fadeIn();
 })();
 
 function fix_bottom_junk(arr) {
