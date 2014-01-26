@@ -12,7 +12,6 @@ angular.module("hr",[])
         $scope.coursessss = data["courses"];
         angular.forEach($scope.coursessss, function(follower, index){
                 $scope.courses.push(follower);
-            console.log(follower);
             });
       }).
       error(function(data, status) {

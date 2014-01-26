@@ -49,15 +49,15 @@
                         <form name="input" action="html_form_action.asp" method="get">
 
                         <form action="">
-                        Department:<select ng-model="dept" ng-options="c.dept in for c in courses | unique:'dept'" name="departments">
+                        Department:<select ng-model="dept" ng-options="c.dept for c in courses | unique:'dept'" name="departments">
                         </select>
 
                         <form action="">
-                        Course: <select ng-model="number" ng-options="c.number in for c in courses | unique:'number'" name="courses">
+                        Course: <select ng-model="number" ng-options="c.number for c in courses | unique:'number'" name="courses">
                         </select>
 
                         <form action="">
-                        Distribution: <select ng-model="dist" ng-options="c.dist in for c in courses | unique:'dist'" name="distribution">
+                        Distribution: <select ng-model="dist" ng-options="c.dist for c in courses | unique:'dist'" name="distribution">
                         </select>
 
                     <img src="http://placehold.it/300x300">
