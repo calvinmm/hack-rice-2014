@@ -5,6 +5,7 @@ angular.module("hr",[])
  'Search' : "search.html",
  'intro' : "intro.html",
  };
+    $scope.classes = [];
     $scope.courses = [];
     $scope.division = [];
     $scope.distribution = [];
@@ -29,4 +30,9 @@ angular.module("hr",[])
         $scope.status = status;
     })
  };
+    $scope.not = function(func) {
+    return function (item) { 
+        return !func(item); 
+    }
+};
 });
