@@ -145,3 +145,8 @@ td.right {
 #footer {
     display: none;
 }
+
+#selected {
+    font-weight: bold;
+    background-color: #5cb85c;
+}
