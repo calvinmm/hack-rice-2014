@@ -120,23 +120,18 @@ td.right {
     color: white;
     font-size: 12px;
     height: 25px;
+    background-color: blue;
 }
 
-#math-355 {
-    background-color: #9C25C2;
-}
-
-#math-101 {
-    background-color: #2A9156;
-}
-
-#math-102 {
-    background-color: #91562A;   
-}
-
-#comp-310 {
-    background-color: #D54C33;
-}
+#math-101 { background-color: #2A9156; }
+#math-102 { background-color: #91562A; }
+#math-355 { background-color: #9C25C2; }
+#stat-311 { background-color: #03EBA6; }
+#phys-101 { background-color: #872187; }
+#phys-102 { background-color: #59955C; }
+#comp-140 { background-color: #D54C33; }
+#comp-182 { background-color: #06DCFB; }
+#comp-215 { background-color: #872187; }
 
 .input-group {
     padding-top: 10px;
