@@ -31,7 +31,7 @@ function fix_bottom_junk(arr) {
     $.getJSON(url + arr[0] + "/" + arr[1] + "?callback=?", function(data) {
         var obj = data.courses[0];
 
-        console.log(obj);
+        // console.log(obj);
         var course_div = $("#course-info-bottom");
 
         $(course_div).find("h4").text(obj.dept + " " + obj.number.toString());
@@ -95,9 +95,11 @@ function add_class_list (name) {
 
     var temp = $("<li>").attr({
         class: "list-group-item"
-    }).text(name).append($("<span>").attr({
-        class: "glyphicon glyphicon-remove pull-right"
-    }));
+    }).text(name);
+
+    // .append($("<span>").attr({
+    //     class: "glyphicon glyphicon-remove pull-right"
+    // }));
 
     add_to_calendar(name.split(" "));
 
