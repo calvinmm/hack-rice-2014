@@ -8,6 +8,9 @@ angular.module("hr",[])
     $scope.courses = [];
     $scope.division = [];
     $scope.distribution = [];
+    $scope.want = {};
+    $scope.want.dept = "M";
+    $scope.want.dist = "";
  $scope.load = function(){
      $http({method: "JSONP", url: "http://ec2-54-201-138-192.us-west-2.compute.amazonaws.com:8080/courses?callback=JSON_CALLBACK", cache : $templateCache}).
       success(function(data, status) {
