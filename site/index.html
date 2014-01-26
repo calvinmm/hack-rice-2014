@@ -154,6 +154,10 @@
         </div>
     </div>
     
+    <div ng-repeat="class in courses | filter:want.dist | filter:want.dept | filter:want.number">
+    <p ng-bind="class.name"></p>
+    </div>
+    
     <div id="footer">
         <div class="container">
             <p class="text-muted credit">Hack Rice 2014 | Built by Alex, Calvin, Jesse, Lauren, and Tres</p>
