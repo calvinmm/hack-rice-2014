@@ -88,8 +88,9 @@ td.right {
     width: 250px;
 }
 
-.current {
-    background-color: #dff0d8;
+#current {
+    font-weight: bold;
+    background-color: #d9edf7;
 }
 
 .bottom {
@@ -135,4 +136,8 @@ td.right {
 
 .input-group {
     padding-top: 10px;
+}
+
+.list-group :hover {
+    background-color: #f0f8ff;
 }

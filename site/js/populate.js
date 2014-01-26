@@ -47,3 +47,14 @@ function fix_bottom_junk(arr) {
 
     });
 }
+
+$(".list-group-item").click(function() {
+
+    $(".list-group-item").removeAttr("id");
+    $(this).attr("id", "current");
+
+    var course_info = $(this).text().trim();
+    var arr = course_info.split(" ");
+
+    fix_bottom_junk(arr);
+})
